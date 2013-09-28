@@ -1,24 +1,34 @@
 # BackboneRailsRoutes
 
-TODO: Write a gem description
+Use Rails routes directly in a Backbone App.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'backbone_rails_routes'
+    gem 'backbone_rails_routes', git: 'git@github.com:alexandrecolas/backbone_rails_routes.git'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install backbone_rails_routes
+    $ bundle install
 
 ## Usage
 
-TODO: Write usage instructions here
+Add backbone.rails_routes in application.js
+
+```javascript
+//= require underscore
+//= require backbone
+//= require backbone.rails_routes
+
+```
+
+Next use Backbone.RailsRoutes in `Backbone.Model` or `Backbone.Router`
+
+```coffeescript
+class App.Models.Game extends Backbone.Model
+  urlRoot: Backbone.RailsRoutes.get("games") # return "/games"
+```
 
 ## Contributing
 
